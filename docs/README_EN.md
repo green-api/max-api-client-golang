@@ -1,6 +1,6 @@
 # max-api-client-golang
 
-- [Документация на русском языке](README_RU.md).
+- [Документация на русском языке](/README.md).
 
 `max-api-client-golang` is a library for integration with MAX messenger using the API
 service [green-api.com](https://green-api.com/v3/). You should get a registration token and an account ID in
