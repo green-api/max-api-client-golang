@@ -1,55 +1,47 @@
 # max-api-client-golang
 
-- [Документация на русском языке](docs/README_RU.md).
-
-`max-api-client-golang` is a library for integration with MAX messenger using the API
-service [green-api.com](https://green-api.com/v3/). You should get a registration token and an account ID in
-your [personal cabinet](https://console.green-api.com/) to use the library. There is a free developer account tariff.
-
-
+- [Documentation in Russian](docs/README_EN.md).
 
 ## API
 
-The documentation for the REST API can be found at the [link](https://green-api.com/v3/docs/api). The library is a wrapper
-for the REST API, so the documentation at the link above also applies.
+Документация к REST API находится по [ссылке](https://green-api.com/v3/docs/api). Библиотека является оберткой к REST API, поэтому документация по ссылке выше применима и к самой библиотеке.
 
-## Support links
+## Поддержка
 
 [![Support](https://img.shields.io/badge/support@green--api.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:support@greenapi.com)
 [![Support](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/greenapi_support_eng_bot)
-[![Support](https://img.shields.io/badge/MAX-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/77273122366)
+[![Support](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/77273122366)
 
-## Guides & News
+## Руководства и новости
 
 [![Guides](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://www.youtube.com/@greenapi-en)
 [![News](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/green_api)
-[![News](https://img.shields.io/badge/MAX-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VaLj6J4LNSa2B5Jx6s3h)
+[![News](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VaLj6J4LNSa2B5Jx6s3h)
 
-#### Authorization
+## Авторизация
 
-To send a message or perform other Green API methods, the MAX account in the phone app must be authorized. To
-authorize the account, go to your [cabinet](https://console.green-api.com/) and scan the QR code using the MAX app.
+Чтобы отправить сообщение или выполнить другие методы GREEN API, аккаунт MAX в приложении телефона должен быть в авторизованном состоянии. Для авторизации аккаунта перейдите в [личный кабинет](https://console.green-api.com/) и сканируйте QR-код с использованием приложения MAX.
 
-## Installation
+## Установка
 
-**Make sure that you have Go installed with a version of 1.20 or newer**
+**Убедитесь, что у вас установлена версия Go не ниже 1.20**
 ```shell
 go version
 ```
 
-**Create a module for your project if you didn't:**
+**Создайте Go модуль, если он не создан:**
 
 ```shell
 go mod init ModuleName
 ```
 
-**Install the library:**
+**Установите библиотеку:**
 
 ```shell
 go get github.com/green-api/max-api-client-golang
 ```
 
-**Import:**
+**Импорт:**
 
 ```go
 import (
@@ -57,9 +49,9 @@ import (
 )
 ```
 
-## Usage and examples
+## Использование и примеры
 
-**How to initialize an object:**
+**Как инициализировать объект:**
 
 ```go
 GreenAPI := greenapi.GreenAPI{
@@ -70,13 +62,13 @@ GreenAPI := greenapi.GreenAPI{
 	}
 ```
 
-All methods of this library return two objects: `*APIResponse` and `error`. 
+Все методы библиотеки возвращают два объекта: `*APIResponse` и `error`. 
 
-You can see the `APIResponse` format in the [types.go](types.go)
+Вы можете посмотреть формат `APIResponse` в [types.go](types.go)
 
-**How to send a message:**
+**Как отправить сообщение:**
 
-Link to example: [sendMessage/main.go](examples/sendMessage/main.go)
+Ссылка на пример: [sendMessage/main.go](/examples/sendMessage/main.go)
 
 ```go
 response, _ := GreenAPI.Sending().SendMessage(
@@ -85,9 +77,9 @@ response, _ := GreenAPI.Sending().SendMessage(
 	)
 ```
 
-**How to create a group:**
+**Как создать группу:**
 
-Link to example: [createGroup/main.go](examples/createGroup/main.go)
+Ссылка на пример: [createGroup/main.go](/examples/createGroup/main.go)
 
 ```go
 response, _ := GreenAPI.Groups().CreateGroup(
@@ -99,9 +91,9 @@ response, _ := GreenAPI.Groups().CreateGroup(
 	)
 ```
 
-**How to send file by upload:**
+**Как отправить файл с диска:**
 
-Link to example: [sendFileByUpload/main.go](examples/sendFileByUpload/main.go)
+Ссылка на пример: [sendFileByUpload/main.go](/examples/sendFileByUpload/main.go)
 
 ```go
 response, _ := GreenAPI.Sending().SendFileByUpload(
@@ -111,9 +103,9 @@ response, _ := GreenAPI.Sending().SendFileByUpload(
 	)
 ```
 
-**How to send a file by URL:**
+**Как отправить файл по ссылке:**
 
-Link to example: [sendFileByUrl/main.go](examples/sendFileByUrl/main.go)
+Ссылка на пример: [sendFileByUrl/main.go](/examples/sendFileByUrl/main.go)
 
 ```go
 response, _ := GreenAPI.Sending().SendFileByUrl(
@@ -124,9 +116,9 @@ response, _ := GreenAPI.Sending().SendFileByUrl(
 	)
 ```
 
-**How to receive an incoming notification:**
+**Как получить входящее уведомление:**
 
-Link to example: [receiveNotification/main.go](examples/receiveNotification/main.go)
+Ссылка на пример: [receiveNotification/main.go](/examples/receiveNotification/main.go)
 
 ```go
 response, _ := GreenAPI.Receiving().ReceiveNotification(
@@ -134,30 +126,30 @@ response, _ := GreenAPI.Receiving().ReceiveNotification(
 	)
 ```
 
-## Partner methods
+## Методы партнёра
 
-**To use partner methods you have to initialize another object:**
+**Чтобы использовать методы партнёра, вы должны инициализировать другой объект:**
 
 ```go
 Partner := greenapi.GreenAPIPartner{
 		PartnerToken: "gac.1234567891234567891234567891213456789",
-		Email: "mail@email.com", // email is optional
+		Email: "mail@email.com", // поле email не обязательно 
 	}
 ```
 
-**Now you can use Partner methods as usual methods, but through the "Partner" object:**
+**Теперь вы можете использовать методы партнёра так же, как и обычные методы, но через объект "Partner":**
 
-**How to get instances:**
+**Как получить все инстансы на аккаунте:**
 
-Link to the example: [partnerMethods/getInstances/main.go](examples/partnerMethods/getInstances/main.go)
+Ссылка на пример: [partnerMethods/getInstances/main.go](/examples/partnerMethods/getInstances/main.go)
 
 ```go
 response, _ := Partner.Partner().GetInstances()
 ```
 
-**How to create an instance:**
+**Как создать инстанс:**
 
-Link to the example: [partnerMethods/createInstance/main.go](examples/partnerMethods/createInstance/main.go)
+Ссылка на пример: [partnerMethods/createInstance/main.go](/examples/partnerMethods/createInstance/main.go)
 
 ```go
 response, _ := Partner.Partner().CreateInstance(
@@ -172,26 +164,25 @@ response, _ := Partner.Partner().CreateInstance(
 		greenapi.OptionalOutgoingAPIMessageWebhook(true),
 		greenapi.OptionalStateWebhook(true),
 		greenapi.OptionalIncomingWebhook(true),
-
 	)
 ```
 
-**How to delete an instance:**
+**Как удалить инстанс:**
 
-Link to the example: [partnerMethods/deleteInstanceAccount/main.go](examples/partnerMethods/deleteInstanceAccount/main.go)
+Ссылка на пример: [partnerMethods/deleteInstanceAccount/main.go](/examples/partnerMethods/deleteInstanceAccount/main.go)
 
 ```go
 response, _ := Partner.Partner().DeleteInstanceAccount(3100000000)
 ```
 
-## Optional parameters
+## Необязательные параметры
 
-**Note that functions might have optional arguments, which you can pass or ignore. Optional parameters are passed as functions into the method's arguments and have similar naming format:**
+**Обратите внимание, что методы могут иметь необязательные параметры, которые вы можете передавать. Необязательные параметры передаются в аргументы методов в виде функций и имеют следующий формат:**
 ```go
 greenapi.Optional + name of parameter
 ```
 
-**For example, in the `SetSettings` method all the arguments are optional. Here is an example of how it works:**
+**К примеру в методе `SetSettings` все параметры являются опциональными. Рассмотрим пример вызова данной функции::**
 
 ```go
 response, _ := GreenAPI.Account().SetSettings(
@@ -208,74 +199,77 @@ response, _ := GreenAPI.Account().SetSettings(
 	)
 ```
 
-In this example, only `DelaySendMessages`, `OutgoingWebhook` and `IncomingWebhook` settings will be changed, other settings are commented so they will not be passed. However, you can uncomment any setting that you prefer. **The settings that were not used will not be affected**
+В этом примере только настройки `DelaySendMessages`, `OutgoingWebhook` и `IncomingWebhook` будут изменены, остальные параметры закомментированы, поэтому не будут использованы. Вы можете раскомментировать любой параметр который предпочитаете. **Неиспользованные параметры никак не затронут настройки инстанса**
 
-One more example of using optional parameters, this time let's use `sendMessage` method:
+Ещё один пример использования опциональных параметров, в этот раз рассмотрим метод `sendMessage`:
 
 ```go
 response, _ := GreenAPI.Sending().SendMessage(
 		"10000000",
 		"Hello",
-		greenapi.OptionalQuotedMessageId("BAE59673E71FC5DB"), // quotes specified message
+		greenapi.OptionalQuotedMessageId("2712345112345"), // цитирует указанное сообщение
 	)
 ```
 
-## List of examples
+## Список примеров
 
-| Description                                   | Link to example                                               |
+| Описание                                   | Ссылка на пример                                               |
 |-----------------------------------------------|---------------------------------------------------------------|
-| How to send a message                         | [sendMessage/main.go](examples/sendMessage/main.go)           |
-| How to send a file by uploading from the disk | [sendFileByUpload/main.go](examples/sendFileByUpload/main.go) |
-| How to send a file by URL | [sendFileByUrl/main.go](examples/sendFileByUrl/main.go) |
-| How to upload a file to an external drive                     | [uploadFile/main.go](examples/uploadFile/main.go)       |
-| How to check if there is a MAX account on the phone number         | [CheckAccount/main.go](examples/CheckAccount/main.go)                   |
-| How to set instance settings             | [setSettings/main.go](examples/setSettings/main.go)                 |
-| How to create a group             | [createGroup/main.go](examples/createGroup/main.go)                 |
-| How to receive an incoming notification | [receiveNotification/main.go](examples/receiveNotification/main.go) |
-| How to get all instances of the account             | [partnerMethods/getInstances/main.go](examples/partnerMethods/getInstances/main.go)                 |
-| How to create an instance             | [partnerMethods/createInstance/main.go](examples/partnerMethods/createInstance/main.go)                 |
-| How to delete an instance            | [partnerMethods/deleteInstanceAccount/main.go](examples/partnerMethods/deleteInstanceAccount/main.go)                 |
+| Как отправить сообщение                         | [sendMessage/main.go](/examples/sendMessage/main.go)           |
+| Как отправить файл с диска | [sendFileByUpload/main.go](/examples/sendFileByUpload/main.go) |
+| Как отправить файл по ссылке | [sendFileByUrl/main.go](/examples/sendFileByUrl/main.go) |
+| Как выгрузить файл в облачное хранилище                     | [uploadFile/main.go](/examples/uploadFile/main.go)       |
+| Как отправить опрос                         | [sendPoll/main.go](/examples/sendPoll/main.go)           |
+| Как проверить номер телефона на наличие аккаунта MAX         | [CheckAccount/main.go](/examples/CheckAccount/main.go)                   |
+| Как установить настройки инстанса             | [setSettings/main.go](/examples/setSettings/main.go)                 |
+| Как создать группу             | [createGroup/main.go](/examples/createGroup/main.go)                 |
+| Как отправить текстовый статус             | [sendTextStatus/main.go](/examples/sendTextStatus/main.go)                 |
+| Как получить входящее уведомление | [receiveNotification/main.go](/examples/receiveNotification/main.go) |
+| Как получить все инстансы на аккаунте             | [partnerMethods/getInstances/main.go](/examples/partnerMethods/getInstances/main.go)                 |
+| Как создать инстанс             | [partnerMethods/createInstance/main.go](/examples/partnerMethods/createInstance/main.go)                 |
+| Как удалить инстанс            | [partnerMethods/deleteInstanceAccount/main.go](/examples/partnerMethods/deleteInstanceAccount/main.go)                 |
 
-## List of all library methods
+## Список всех методов библиотеки
 
-| API method                        | Description                                                                                                               | Documentation link                                                                                          |
+| API метод                        | Описание                                                                                                               | Ссылка на документацию                                                                                          |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| `Account().GetSettings`           | The method is designed to get the current settings of the account                                                         | [GetSettings](https://green-api.com/v3/docs/api/account/GetSettings/)                                       |
-| `Account().GetAccountSettings`         | The method is designed to get information about the MAX account                                                      | [GetSettings](https://green-api.com/v3/docs/api/account/GetAccountSettings/)                                     |
-| `Account().SetSettings`           | The method is designed to set the account settings                                                                        | [SetSettings](https://green-api.com/v3/docs/api/account/SetSettings/)                                          |
-| `Account().GetStateInstance`      | The method is designed to get the state of the account                                                                    | [GetStateInstance](https://green-api.com/v3/docs/api/account/GetStateInstance/)                             |
-| `Account().Reboot`                | The method is designed to restart the account                                                                             | [Reboot](https://green-api.com/v3/docs/api/account/Reboot/)                                                 |
-| `Account().Logout`                | The method is designed to unlogin the account                                                                             | [Logout](https://green-api.com/v3/docs/api/account/Logout/)                                                 |
-| `Account().SetProfilePicture`     | The method is designed to set the avatar of the account                                                                   | [SetProfilePicture](https://green-api.com/v3/docs/api/account/SetProfilePicture/)                           |
-| `Account().StartAuthorization`  | The method is designed to complete the instance authorization process. Use the verification code received from the SMS when calling the method | [StartAuthorization](https://green-api.com/v3/docs/api/account/StartAuthorization/)                     |                                  |
+| `Account().GetSettings`           | Метод предназначен для получения текущих настроек аккаунта                                                         | [GetSettings](https://green-api.com/v3/docs/api/account/GetSettings/)                                       |
+| `Account().GetAccountSettings`         | Метод предназначен для получения информации о аккаунте MAX                                                      | [GetSettings](https://green-api.com/v3/docs/api/account/GetAccountSettings/)                                     |
+| `Account().SetSettings`           | Метод предназначен для установки настроек аккаунта                                                                        | [SetSettings](https://green-api.com/v3/docs/api/account/SetSettings/)                                          |
+| `Account().GetStateInstance`      | Метод предназначен для получения состояния аккаунта                                                                    | [GetStateInstance](https://green-api.com/v3/docs/api/account/GetStateInstance/)                             |
+| `Account().Reboot`                | Метод предназначен для перезапуска аккаунта                                                                             | [Reboot](https://green-api.com/v3/docs/api/account/Reboot/)                                                 |
+| `Account().Logout`                | Метод предназначен для деавторизации аккаунта                                                                             | [Logout](https://green-api.com/v3/docs/api/account/Logout/)                                                 |
+| `Account().QR`                    | Метод предназначен для получения QR-кода                                                                                   | [QR](https://green-api.com/v3/docs/api/account/QR/)                                                         |
+| `Account().SetProfilePicture`     | Метод предназначен для установки аватара аккаунта                                                                   | [SetProfilePicture](https://green-api.com/v3/docs/api/account/SetProfilePicture/)                           |
+| `Account().StartAuthorization`  | Метод предназначен для авторизации инстанса. Процесс авторизации заключается в подключении к шлюзу GREEN-API существующего аккаунта мессенджера MAX | [StartAuthorization](https://green-api.com/v3/docs/api/account/StartAuthorization/)                     |                                  |
 | `Account().SendAuthorizationCode`  | Метод предназначен для завершения процесса авторизации инстанса. Используйте код проверки полученный из SMS при вызове метода  | [SendAuthorizationCode](https://green-api.com/v3/docs/api/account/SendAuthorizationCode/)                     |                                  |
-| `Groups().CreateGroup`            | The method is designed to create a group chat                                                                             | [CreateGroup](https://green-api.com/v3/docs/api/groups/CreateGroup/)                                        |
-| `Groups().UpdateGroupName`        | The method changes the name of the group chat                                                                             | [UpdateGroupName](https://green-api.com/v3/docs/api/groups/UpdateGroupName/)                                |
-| `Groups().GetGroupData`           | The method gets group chat data                                                                                           | [GetGroupData](https://green-api.com/v3/docs/api/groups/GetGroupData/)                                      |
-| `Groups().AddGroupParticipant`    | The method adds a participant to the group chat                                                                           | [AddGroupParticipant](https://green-api.com/v3/docs/api/groups/AddGroupParticipant/)                        |
-| `Groups().RemoveGroupParticipant` | The method removes the participant from the group chat                                                                    | [RemoveGroupParticipant](https://green-api.com/v3/docs/api/groups/RemoveGroupParticipant/)                  |
-| `Groups().SetGroupAdmin`          | The method designates a member of a group chat as an administrator                                                        | [SetGroupAdmin](https://green-api.com/v3/docs/api/groups/SetGroupAdmin/)                                    |
-| `Groups().RemoveAdmin`            | The method deprives the participant of group chat administration rights                                                   | [RemoveAdmin](https://green-api.com/v3/docs/api/groups/RemoveAdmin/)                                        |
-| `Groups().SetGroupPicture`        | The method sets the avatar of the group                                                                                   | [SetGroupPicture](https://green-api.com/v3/docs/api/groups/SetGroupPicture/)                                |
-| `Groups().LeaveGroup`             | The method logs the user of the current account out of the group chat                                                     | [LeaveGroup](https://green-api.com/v3/docs/api/groups/LeaveGroup/)                                          |
-| `Journals().GetChatHistory`       | The method returns the chat message history                                                                               | [GetChatHistory](https://green-api.com/v3/docs/api/journals/GetChatHistory/)                                |
-| `Journals().GetMessage`           | The method returns a chat message                                                                                         | [GetMessage](https://green-api.com/v3/docs/api/journals/GetMessage/)                                        |
-| `Journals().LastIncomingMessages` | The method returns the most recent incoming messages of the account                                                       | [LastIncomingMessages](https://green-api.com/v3/docs/api/journals/LastIncomingMessages/)                    |
-| `Journals().LastOutgoingMessages` | The method returns the last sent messages of the account                                                                  | [LastOutgoingMessages](https://green-api.com/v3/docs/api/journals/LastOutgoingMessages/)                    |
-| `Queues().ShowMessagesQueue`      | The method is designed to get the list of messages that are in the queue to be sent                                       | [ShowMessagesQueue](https://green-api.com/v3/docs/api/queues/ShowMessagesQueue/)                            |
-| `Queues().ClearMessagesQueue`     | The method is designed to clear the queue of messages to be sent                                                          | [ClearMessagesQueue](https://green-api.com/v3/docs/api/queues/ClearMessagesQueue/)                          |
-| `ReadMark().ReadChat`             | The method is designed to mark chat messages as read                                                                      | [ReadChat](https://green-api.com/v3/docs/api/marks/ReadChat/)                                               |
-| `Receiving().ReceiveNotification` | The method is designed to receive a single incoming notification from the notification queue                              | [ReceiveNotification](https://green-api.com/v3/docs/api/receiving/technology-http-api/ReceiveNotification/) |
-| `Receiving().DeleteNotification`  | The method is designed to remove an incoming notification from the notification queue                                     | [DeleteNotification](https://green-api.com/v3/docs/api/receiving/technology-http-api/DeleteNotification/)   |
-| `Receiving().DownloadFile`        | The method is for downloading received and sent files                                                                     | [DownloadFile](https://green-api.com/v3/docs/api/receiving/files/DownloadFile/)                             |
-| `Sending().SendMessage`           | The method is designed to send a text message to a personal or group chat                                                 | [SendMessage](https://green-api.com/v3/docs/api/sending/SendMessage/)                                       |
-| `Sending().SendFileByUpload`      | The method is designed to send a file loaded through a form (form-data)                                                   | [SendFileByUpload](https://green-api.com/v3/docs/api/sending/SendFileByUpload/)                             |
-| `Sending().SendFileByUrl`         | The method is designed to send a file downloaded via a link                                                               | [SendFileByUrl](https://green-api.com/v3/docs/api/sending/SendFileByUrl/)                                   |
-| `Sending().UploadFile`            | The method allows you to upload a file from the local file system, which can later be sent using the SendFileByUrl method | [UploadFile](https://green-api.com/v3/docs/api/sending/UploadFile/)                                         |
-| `Service().CheckAccount`         | The method checks if there is a MAX account on the phone number                                                      | [CheckAccount](https://green-api.com/v3/docs/api/service/CheckAccount/)                                   |
-| `Service().GetAvatar`             | The method returns the avatar of the correspondent or group chat                                                          | [GetAvatar](https://green-api.com/v3/docs/api/service/GetAvatar/)                                           |
-| `Service().GetContacts`           | The method is designed to get a list of contacts of the current account                                                   | [GetContacts](https://green-api.com/v3/docs/api/service/GetContacts/)                                       |
-| `Service().GetContactInfo`        | The method is designed to obtain information about the contact                                                            | [GetContactInfo](https://green-api.com/v3/docs/api/service/GetContactInfo/)                                 |
-| `Partner().GetInstances`   | The method is for getting all the account instances created by the partner.                                           | [GetInstances](https://green-api.com/v3/docs/partners/getInstances/)                       |
-| `Partner().CreateInstance`   | The method is for creating an instance.                                           | [CreateInstance](https://green-api.com/v3/docs/partners/createInstance/)                       |
-| `Partner().DeleteInstanceAccount`   | The method is for deleting an instance.                                           | [DeleteInstanceAccount](https://green-api.com/v3/docs/partners/deleteInstanceAccount/)                       |
+| `Groups().CreateGroup`            | Метод предназначен для создания группового чата                                                                             | [CreateGroup](https://green-api.com/v3/docs/api/groups/CreateGroup/)                                        |
+| `Groups().UpdateGroupName`        | Метод изменяет наименование группового чата                                                                             | [UpdateGroupName](https://green-api.com/v3/docs/api/groups/UpdateGroupName/)                                |
+| `Groups().GetGroupData`           | Метод получает данные группового чата                                                                                           | [GetGroupData](https://green-api.com/v3/docs/api/groups/GetGroupData/)                                      |
+| `Groups().AddGroupParticipant`    | Метод добавляет участника в групповой чат                                                                           | [AddGroupParticipant](https://green-api.com/v3/docs/api/groups/AddGroupParticipant/)                        |
+| `Groups().RemoveGroupParticipant` | Метод удаляет участника из группового чата                                                                    | [RemoveGroupParticipant](https://green-api.com/v3/docs/api/groups/RemoveGroupParticipant/)                  |
+| `Groups().SetGroupAdmin`          | Метод назначает участника группового чата администратором                                                        | [SetGroupAdmin](https://green-api.com/v3/docs/api/groups/SetGroupAdmin/)                                    |
+| `Groups().RemoveAdmin`            | Метод лишает участника прав администрирования группового чата                                                   | [RemoveAdmin](https://green-api.com/v3/docs/api/groups/RemoveAdmin/)                                        |
+| `Groups().SetGroupPicture`        | Метод устанавливает аватар группы                                                                                   | [SetGroupPicture](https://green-api.com/v3/docs/api/groups/SetGroupPicture/)                                |
+| `Groups().LeaveGroup`             | 	Метод производит выход пользователя текущего аккаунта из группового чата                                                     | [LeaveGroup](https://green-api.com/v3/docs/api/groups/LeaveGroup/)                                          |
+| `Journals().GetChatHistory`       | Метод возвращает историю сообщений чата                                                                               | [GetChatHistory](https://green-api.com/v3/docs/api/journals/GetChatHistory/)                                |
+| `Journals().GetMessage`           | Метод возвращает сообщение чата                                                                                         | [GetMessage](https://green-api.com/v3/docs/api/journals/GetMessage/)                                        |
+| `Journals().LastIncomingMessages` | Метод возвращает крайние входящие сообщения аккаунта                                                       | [LastIncomingMessages](https://green-api.com/v3/docs/api/journals/LastIncomingMessages/)                    |
+| `Journals().LastOutgoingMessages` | Метод возвращает крайние отправленные сообщения аккаунта                                                                  | [LastOutgoingMessages](https://green-api.com/v3/docs/api/journals/LastOutgoingMessages/)                    |
+| `Queues().ShowMessagesQueue`      | Метод предназначен для получения списка сообщений, находящихся в очереди на отправку                                       | [ShowMessagesQueue](https://green-api.com/v3/docs/api/queues/ShowMessagesQueue/)                            |
+| `Queues().ClearMessagesQueue`     | Метод предназначен для очистки очереди сообщений на отправку                                                          | [ClearMessagesQueue](https://green-api.com/v3/docs/api/queues/ClearMessagesQueue/)                          |
+| `ReadMark().ReadChat`             | Метод предназначен для отметки сообщений в чате прочитанными                                                                      | [ReadChat](https://green-api.com/v3/docs/api/marks/ReadChat/)                                               |
+| `Receiving().ReceiveNotification` | Метод предназначен для получения одного входящего уведомления из очереди уведомлений                              | [ReceiveNotification](https://green-api.com/v3/docs/api/receiving/technology-http-api/ReceiveNotification/) |
+| `Receiving().DeleteNotification`  | Метод предназначен для удаления входящего уведомления из очереди уведомлений                                     | [DeleteNotification](https://green-api.com/v3/docs/api/receiving/technology-http-api/DeleteNotification/)   |
+| `Receiving().DownloadFile`        | 	Метод предназначен для скачивания принятых и отправленных файлов                                                                     | [DownloadFile](https://green-api.com/v3/docs/api/receiving/files/DownloadFile/)                             |
+| `Sending().SendMessage`           | Метод предназначен для отправки текстового сообщения в личный или групповой чат                                                 | [SendMessage](https://green-api.com/v3/docs/api/sending/SendMessage/)                                       |
+| `Sending().SendFileByUpload`      | Метод предназначен для отправки файла, загружаемого через форму (form-data)                                                   | [SendFileByUpload](https://green-api.com/v3/docs/api/sending/SendFileByUpload/)                             |
+| `Sending().SendFileByUrl`         | Метод предназначен для отправки файла, загружаемого по ссылке                                                               | [SendFileByUrl](https://green-api.com/v3/docs/api/sending/SendFileByUrl/)                                   |
+| `Sending().UploadFile`            | Метод предназначен для загрузки файла в облачное хранилище, который можно отправить методом sendFileByUrl | [UploadFile](https://green-api.com/v3/docs/api/sending/UploadFile/)                                         |
+| `Service().CheckAccount`         | Метод проверяет наличие аккаунта MAX на номере телефона                                                      | [CheckAccount](https://green-api.com/v3/docs/api/service/CheckAccount/)                                   |
+| `Service().GetAvatar`             | Метод возвращает аватар корреспондента или группового чата	                                                          | [GetAvatar](https://green-api.com/v3/docs/api/service/GetAvatar/)                                           |
+| `Service().GetContacts`           | Метод предназначен для получения списка контактов текущего аккаунта                                                   | [GetContacts](https://green-api.com/v3/docs/api/service/GetContacts/)                                       |
+| `Service().GetContactInfo`        | Метод предназначен для получения информации о контакте                                                            | [GetContactInfo](https://green-api.com/v3/docs/api/service/GetContactInfo/)                                 |
+| `Partner().GetInstances`   | Метод предназначен для получения всех инстансов аккаунтов созданных партнёром.                                           | [GetInstances](https://green-api.com/v3/docs/partners/getInstances/)                       |
+| `Partner().CreateInstance`   | Метод предназначен для создания инстанса от имени партнёра.                                           | [CreateInstance](https://green-api.com/v3/docs/partners/createInstance/)                       |
+| `Partner().DeleteInstanceAccount`   | Метод предназначен для удаления инстанса аккаунта партнёра.                                           | [DeleteInstanceAccount](https://green-api.com/v3/docs/partners/deleteInstanceAccount/)                   
