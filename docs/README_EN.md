@@ -7,7 +7,6 @@ service [green-api.com](https://green-api.com/v3/). You should get a registratio
 your [personal cabinet](https://console.green-api.com/) to use the library. There is a free developer account tariff.
 
 
-
 ## API
 
 The documentation for the REST API can be found at the [link](https://green-api.com/v3/docs/api). The library is a wrapper
@@ -25,7 +24,7 @@ for the REST API, so the documentation at the link above also applies.
 [![News](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/green_api)
 [![News](https://img.shields.io/badge/MAX-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029VaLj6J4LNSa2B5Jx6s3h)
 
-#### Authorization
+## Authorization
 
 To send a message or perform other Green API methods, the MAX account in the phone app must be authorized. To
 authorize the account, go to your [cabinet](https://console.green-api.com/) and scan the QR code using the MAX app.
