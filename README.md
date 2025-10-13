@@ -1,6 +1,6 @@
 # max-api-client-golang
 
-- [Documentation in Russian](docs/README_EN.md).
+- [Documentation in English](docs/README_EN.md).
 
 ## API
 
