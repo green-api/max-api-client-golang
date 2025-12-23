@@ -216,13 +216,22 @@ func (c AccountCategory) Logout() (*APIResponse, error) {
 	return c.GreenAPI.Request("GET", "logout", nil)
 }
 
+// ------------------------------------------------------------------ QR
+
+// Get a QR code
+//
+// https://green-api.com/v3/docs/api/account/qr/
+func (c AccountCategory) Qr() (*APIResponse, error) {
+	return c.GreenAPI.Request("GET", "qr", nil)
+}
+
 // ------------------------------------------------------------------ StartAuthorization
 
 type RequestStartAuthorization struct {
 	PhoneNumber int `json:"phoneNumber"`
 }
 
-// Start instance authorization
+// The method is deprecated. Please use qr.
 //
 // https://green-api.com/v3/en/docs/api/account/StartAuthorization/
 func (c AccountCategory) StartAuthorization(phoneNumber int) (*APIResponse, error) {
@@ -244,7 +253,7 @@ type RequestSendAuthorizationCode struct {
 	Code string `json:"code"`
 }
 
-// Start instance authorization
+// The method is deprecated. Please use qr.
 //
 // https://green-api.com/v3/en/docs/api/account/StartAuthorization/
 func (c AccountCategory) SendAuthorizationCode(code string) (*APIResponse, error) {
